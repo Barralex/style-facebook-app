@@ -7,6 +7,7 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from "./Avatar";
 import MenuButton from "./shared-components/MenuButton";
+import SectionSeparator from "./shared-components/SectionSeparator";
 
 const Container = styled.View`
   width: 100%;
@@ -38,12 +39,6 @@ const Separator = styled.View`
   width: 1px;
   height: 32px;
   background-color: #f0f0f0;
-`;
-
-const BottomDivider = styled.View`
-  width: 100%;
-  height: 9px;
-  background-color: #f0f2f5;
 `;
 
 const ToolBar = () => {
@@ -90,7 +85,7 @@ const ToolBar = () => {
           />
         </Row>
       </Container>
-      <BottomDivider />
+      <SectionSeparator />
     </>
   );
 };

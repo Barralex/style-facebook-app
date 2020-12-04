@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import styled from "styled-components";
 import Avatar from "./Avatar";
+import SectionSeparator from "./shared-components/SectionSeparator";
 
 const Container = styled.View`
   width: 100%;
@@ -23,7 +24,6 @@ const Room = styled.TouchableOpacity`
   padding-left: 15px;
   padding: 0 15px;
   margin-right: 12px;
-  margin-bottom: 10px;
 `;
 
 const RoomText = styled.Text`
@@ -38,32 +38,39 @@ const User = styled.View`
 `;
 
 const mockedUsers = [
-  { source: require("../assets/user2.jpg"), isActive: true },
-  { source: require("../assets/user3.jpg"), isActive: true },
-  { source: require("../assets/user4.jpg"), isActive: false },
-  { source: require("../assets/user5.jpg"), isActive: false },
-  { source: require("../assets/user3.jpg"), isActive: false },
+  { source: require("../assets/user2.jpg"), isActive: true, id: 1 },
+  { source: require("../assets/user3.jpg"), isActive: true, id: 2 },
+  { source: require("../assets/user4.jpg"), isActive: false, id: 3 },
+  { source: require("../assets/user5.jpg"), isActive: false, id: 4 },
+  { source: require("../assets/user3.jpg"), isActive: false, id: 5 },
 ];
 
 const Users = () => {
   return (
-    <Container>
-      <ScrollView horizontal showsHorizontalScrollIndicator>
-        <Room>
-          <MaterialCommunityIcons name="video-plus" size={26} color="#E141FC" />
-          <RoomText>Create Room</RoomText>
-        </Room>
+    <>
+      <Container>
+        <ScrollView horizontal>
+          <Room>
+            <MaterialCommunityIcons
+              name="video-plus"
+              size={26}
+              color="#E141FC"
+            />
+            <RoomText>Create Room</RoomText>
+          </Room>
 
-        {mockedUsers.map((user) => {
-          const { source, isActive } = user;
-          return (
-            <User>
-              <Avatar source={source} online={isActive} />
-            </User>
-          );
-        })}
-      </ScrollView>
-    </Container>
+          {mockedUsers.map((user) => {
+            const { source, isActive, key } = user;
+            return (
+              <User key={key}>
+                <Avatar source={source} online={isActive} />
+              </User>
+            );
+          })}
+        </ScrollView>
+      </Container>
+      <SectionSeparator />
+    </>
   );
 };
 
