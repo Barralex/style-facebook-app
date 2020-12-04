@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import styled from "styled-components";
 import Avatar from "./Avatar";
+import SectionSeparator from "./shared-components/SectionSeparator";
 import Story from "./Story";
 
 const Container = styled.View`
@@ -42,22 +43,25 @@ const mockStories = [
 
 const Stories = () => {
   return (
-    <Container>
-      <ScrollView horizontal styled={{ paddingLeft: 11 }}>
-        {mockStories.map((story) => {
-          const { storyId, storyFirstImage, iconSource, storyText } = story;
+    <>
+      <Container>
+        <ScrollView horizontal styled={{ paddingLeft: 11 }}>
+          {mockStories.map((story) => {
+            const { storyId, storyFirstImage, iconSource, storyText } = story;
 
-          return (
-            <Story
-              key={storyId}
-              source={storyFirstImage}
-              storyIcon={iconSource}
-              storyText={storyText}
-            />
-          );
-        })}
-      </ScrollView>
-    </Container>
+            return (
+              <Story
+                key={storyId}
+                source={storyFirstImage}
+                storyIcon={iconSource}
+                storyText={storyText}
+              />
+            );
+          })}
+        </ScrollView>
+      </Container>
+      <SectionSeparator />
+    </>
   );
 };
 

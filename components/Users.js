@@ -60,9 +60,9 @@ const Users = () => {
           </Room>
 
           {mockedUsers.map((user) => {
-            const { source, isActive, key } = user;
+            const { source, isActive, id } = user;
             return (
-              <User key={key}>
+              <User key={id}>
                 <Avatar source={source} online={isActive} />
               </User>
             );
