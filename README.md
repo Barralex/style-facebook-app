@@ -1,7 +1,7 @@
 # Style Facebook App
 Facebook application design base entirely on flex layouts and styled component library. No backend or functionality added, just components layout.
 
-![Facebook Layout](src/assets/facebook-styling.gif)
+![Facebook Layout](assets/facebook-styling.gif)
 
 ## Built With
 
