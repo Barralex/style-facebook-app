@@ -7,7 +7,7 @@ Facebook application design base entirely on flex layouts and styled component l
 
 * [React Native](https://docs.microsoft.com/en-us/dotnet/framework/winforms/) -  Open-source mobile application framework 
 * [Expo](https://expo.io/) - React Native Open-source platform
-* [Styled Components](https://styled-components.com/)
+* [Styled Components](https://styled-components.com/) - Utilising tagged template literals and CSS, styled-components allows you to write actual CSS code to style your components.
 
 ## Try it with Expo
 
